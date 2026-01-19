@@ -22,3 +22,9 @@ dev = [
     "mypy (>=1.19.1,<2.0.0)",
     "pytest (>=9.0.2,<10.0.0)"
 ]
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+select = ["E", "F", "I"]
+ignore = []

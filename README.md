@@ -1,15 +1,60 @@
-# Platform API
+# FastAPI Production API
 
 This project is a production-style backend service built with FastAPI.
-It focuses on correctness, clarity, and long-term maintainability.
+The focus is on correctness, clarity, and long-term maintainability rather than rapid prototyping.
+
+The project is developed incrementally with explicit engineering decisions documented along the way.
+
+---
 
 ## Goals
-- Clean API design
-- Explicit data contracts
-- Separation of concerns
-- Production-ready defaults
+
+- Clean and explicit API design
+- Strong separation of concerns
+- Reproducible development environment
+- Production-ready defaults from day one
+
+---
 
 ## Non-Goals
-- No frontend
-- No micro-optimizations
-- No premature abstractions
+
+- No frontend or UI
+- No premature optimization
+- No microservices or distributed complexity
+- No framework magic without understanding
+
+---
+
+## Tech Stack
+
+- Python 3.11
+- FastAPI
+- Poetry for dependency management
+
+Additional components such as databases, authentication, background tasks, and deployment tooling will be added incrementally.
+
+---
+
+## Project Setup
+
+### Requirements
+
+- Python 3.11
+- Poetry
+
+### Install Dependencies
+
+pip install poetry
+poetry install
+
+### Activate Virtual Environment
+poetry shell
+
+### Development Commands
+Code Formatting
+poetry run black .
+
+### Linting
+poetry run ruff check .
+
+```bash
