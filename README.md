@@ -52,7 +52,7 @@ poetry shell
 
 ### Development Commands
 Code Formatting
-poetry run black .
+'poetry run black .'
 
 ### Linting
 poetry run ruff check .
