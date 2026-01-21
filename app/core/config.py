@@ -1,25 +1,25 @@
 from functools import lru_cache
-from pydantic import BaseSettings, Field
+
+from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    # Application
-    app_name: str = Field(default="Production API")
-    environment: str = Field(default="development")
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        case_sensitive=False,
+        extra="ignore",
+    )
 
-    # API
-    api_v1_prefix: str = Field(default="/api/v1")
+    app_name: str = "Production API"
+    environment: str = "development"
 
-    # Security
-    secret_key: str = Field(..., min_length=32)
-    access_token_expire_minutes: int = Field(default=30)
+    api_v1_prefix: str = "/api/v1"
 
-    # Database
-    database_url: str = Field(...)
+    secret_key: str = Field(..., validation_alias="SECRET_KEY")
+    access_token_expire_minutes: int = 30
 
-    class Config:
-        env_file = ".env"
-        case_sensitive = True
+    database_url: str = Field(..., validation_alias="DATABASE_URL")
 
 
 @lru_cache
