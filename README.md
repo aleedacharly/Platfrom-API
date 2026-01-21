@@ -56,6 +56,17 @@ Code Formatting
 
 ### Linting
 poetry run ruff check .
+## Architecture Overview
+
+This service follows a layered backend architecture with explicit dependency injection.
+
+Key design principles:
+- No side effects at import time
+- Centralized configuration via environment variables
+- Explicit application lifecycle management
+- Dependency injection for all external resources
+
+The API is the product. No frontend is included.
 
 
 ### Verify
